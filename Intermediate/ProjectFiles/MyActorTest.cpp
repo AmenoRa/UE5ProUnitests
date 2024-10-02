@@ -1,10 +1,11 @@
 #include "CoreMinimal.h"
+#include "Engine/World.h"
 #include "Misc/AutomationTest.h"
 #include "MyActor.h"
-#include "Engine/World.h"
+#include "MyActorTest.h"
 
 // Регистрация теста
-DEFINE_SIMPLE_AUTOMATION_TEST(FMyActorTransformTest, "UE5ProUnitests.MyActorTransformTest", EAutomationTestFlags::EditorContext | EAutomationTestFlags::ProductFilter)
+IMPLEMENT_SIMPLE_AUTOMATION_TEST(FMyActorTransformTest, "UE5ProUnitests.MyActorTransformTest", EAutomationTestFlags::EditorContext | EAutomationTestFlags::ProductFilter);
 
 bool FMyActorTransformTest::RunTest(const FString& Parameters)
 {
