@@ -4,16 +4,16 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "MyActor.generated.h"
+#include "MyAutoUnitest.generated.h"
 
 UCLASS()
-class UE5PROUNITESTS_API AMyActor : public AActor
+class UE5PROUNITESTS_API AMyAutoUnitest : public AActor
 {
 	GENERATED_BODY()
 	
 public:	
 	// Sets default values for this actor's properties
-	AMyActor();
+	AMyAutoUnitest();
 
 protected:
 	// Called when the game starts or when spawned
@@ -23,13 +23,12 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	//Property
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "My Custom Properties")
-	FVector CustomPosition;
+	// Свойство для хранения актора, которое будем проверять
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Unit Test")
+	AActor* TargetActor;
 
-	//Function
-	UFUNCTION(BlueprintCallable, Category = "Actor Utilities")
-	FTransform GetActorCurrentTransform() const;
-
+	// Функция для получения трансформации актора
+	UFUNCTION(BlueprintCallable, Category = "Unit Test")
+	FTransform GetTargetActorTransform() const;
 
 };
